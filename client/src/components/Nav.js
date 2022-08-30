@@ -41,13 +41,9 @@ const Nav = (props) => {
         <Button component={Link} to="/register">
           Register
         </Button>
-        <Link
-          className="navbar-brand text-white text-lg brand-text"
-          to="/logout"
-          onClick={handleLogout}
-        >
+        <Button component={Link} to="/logout" onClick={handleLogout}>
           Logout
-        </Link>
+        </Button>
       </div>
     </div>
   );
