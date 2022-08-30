@@ -1,8 +1,21 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import Mylogo from "./mylogo.png";
 
 const Nav = (props) => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    fetch("/logout")
+      .then((response) => {
+        alert("You have been successfully logged out!");
+        navigate("/login", { replace: true });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div className="navbar">
       <div>
@@ -28,6 +41,13 @@ const Nav = (props) => {
         <Button component={Link} to="/register">
           Register
         </Button>
+        <Link
+          className="navbar-brand text-white text-lg brand-text"
+          to="/logout"
+          onClick={handleLogout}
+        >
+          Logout
+        </Link>
       </div>
     </div>
   );

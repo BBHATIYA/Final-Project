@@ -15,7 +15,7 @@ const LoginRegisterForm = (props) => {
   let navigate = useNavigate();
 
   const handelAction = async () => {
-    if (props.title === "register") {
+    if (props.title === "Register") {
       try {
         const response = await axios.post(
           "/register",
@@ -87,6 +87,13 @@ const LoginRegisterForm = (props) => {
       </Button>
       <div>
         <p>{msg}</p>
+      </div>
+      <div>
+        {props.title === "Register" ? (
+          <Link to="/login">Already have an account? Login here</Link>
+        ) : (
+          <Link to="/register">Don't have an account? Register here</Link>
+        )}
       </div>
     </div>
   );
