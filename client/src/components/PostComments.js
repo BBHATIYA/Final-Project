@@ -145,22 +145,17 @@ const PostComments = (props) => {
         {getpost
           ? getpost.map((item) => {
               return (
-                <div key={item.id} className="branch-card">
-                  <b>Post Id:</b> {item.id}
-                  <br></br>
-                  <b>Post:</b> {item.post}
-                  <br></br>
-                  <b>userid:</b> {item.uid}
-                  <br></br>
-                  <Button
-                    variant="contained"
-                    onClick={() => handelSeeComments(item.id)}
-                  >
-                    See Comments
-                  </Button>
+                <div key={item.id} className="post-card">
+                  <div className="all-post">
+                    <b>Post Id:</b> {item.id}
+                    <br></br>
+                    <b>Post:</b> {item.post}
+                    <br></br>
+                    <b>userid:</b> {item.uid}
+                  </div>
                   {getcomment.map((item, index) => {
                     return (
-                      <div key={index}>
+                      <div key={index} className="commnet-div">
                         <p>{item.comment}</p>
                         <p>User Id: {item.userid}</p>
                         <p>Post Id: {item.refpostid}</p>
@@ -186,6 +181,12 @@ const PostComments = (props) => {
                     onClick={() => handelComments(item.id)}
                   >
                     Add Comments
+                  </Button>
+                  <Button
+                    variant="contained"
+                    onClick={() => handelSeeComments(item.id)}
+                  >
+                    See Comments
                   </Button>
                 </div>
               );
