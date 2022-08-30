@@ -30,11 +30,11 @@ function App() {
           <Route path="/post" element={<PostComments title={"post"} />} />
           <Route
             path="/login"
-            element={<LoginRegisterForm title={"login"} />}
+            element={<LoginRegisterForm title={"Login"} />}
           />
           <Route
             path="/register"
-            element={<LoginRegisterForm title={"register"} />}
+            element={<LoginRegisterForm title={"Register"} />}
           />
         </Routes>
       </div>
