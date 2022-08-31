@@ -32,7 +32,7 @@ const Home = (props) => {
     <div className="home-maindiv">
       <h1>Welcome To Mix Couple Website!</h1>
       <div>
-        <img src={Mylogo} alt="Logo" />
+        <img src={Mylogo} alt="Logo" className="home-logo" />
       </div>
 
       <h1>Home</h1>

@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import Mylogo from "./mylogo.png";
+import "../App.css";
 
 const Nav = (props) => {
   const navigate = useNavigate();
@@ -23,27 +24,31 @@ const Nav = (props) => {
           <img src={Mylogo} alt="Logo" className="nav-logo" />
         </Button>
 
-        <Button component={Link} to="/">
-          Home
-        </Button>
-        <Button component={Link} to="/branch">
-          Branches
-        </Button>
-        <Button component={Link} to="/post">
-          Post
-        </Button>
+        <Link component={Link} to="/">
+          <button className="nav-btn">HOME</button>
+        </Link>
+
+        <Link component={Link} to="/branch">
+          <button className="nav-btn">BRANCHES</button>
+        </Link>
+
+        <Link component={Link} to="/post">
+          <button className="nav-btn">POST</button>
+        </Link>
       </div>
 
       <div className="rightnav">
-        <Button component={Link} to="/login">
-          Login
-        </Button>
-        <Button component={Link} to="/register">
-          Register
-        </Button>
-        <Button component={Link} to="/logout" onClick={handleLogout}>
-          Logout
-        </Button>
+        <Link component={Link} to="/login">
+          <button className="nav-btn">LOGIN</button>
+        </Link>
+
+        <Link component={Link} to="/register">
+          <button className="nav-btn">REGISTER</button>
+        </Link>
+
+        <Link component={Link} to="/logout" onClick={handleLogout}>
+          <button className="nav-btn">LOGOUT</button>
+        </Link>
       </div>
     </div>
   );

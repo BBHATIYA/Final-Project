@@ -22,6 +22,7 @@ const Branches = (props) => {
       <h1> All Branches</h1>
       <input
         placeholder="Search by City name.."
+        id="branch-input"
         onChange={(event) => setQuery(event.target.value)}
       ></input>
 
