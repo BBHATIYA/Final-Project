@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
+// import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { AppContext } from "../App";
 
@@ -67,7 +67,19 @@ const LoginRegisterForm = (props) => {
         <h3>{props.title} Form</h3>
       </div>
       <Box component={"form"} sx={{ m: 1 }} noValidate autoComplete={"off"}>
-        <TextField
+        <input
+          type="text"
+          placeholder="Enter email.."
+          id="email"
+          onChange={(e) => setEmail(e.target.value)}
+        ></input>
+        <input
+          type="text"
+          placeholder="Enter password.."
+          id="password"
+          onChange={(e) => setPassword(e.target.value)}
+        ></input>
+        {/* <TextField
           sx={{ m: 1 }}
           id="email"
           label="Enter email"
@@ -80,9 +92,9 @@ const LoginRegisterForm = (props) => {
           label="Enter password"
           variant="outlined"
           onChange={(e) => setPassword(e.target.value)}
-        />
+        /> */}
       </Box>
-      <Button variant="contained" onClick={handelAction}>
+      <Button variant="contained" color="error" onClick={handelAction}>
         {props.title}
       </Button>
       <div>
@@ -90,9 +102,13 @@ const LoginRegisterForm = (props) => {
       </div>
       <div>
         {props.title === "Register" ? (
-          <Link to="/login">Already have an account? Login here</Link>
+          <Link to="/login" className="links">
+            Already have an account? Login here
+          </Link>
         ) : (
-          <Link to="/register">Don't have an account? Register here</Link>
+          <Link to="/register" className="links">
+            Don't have an account? Register here
+          </Link>
         )}
       </div>
     </div>

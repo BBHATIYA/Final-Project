@@ -2,8 +2,8 @@ import { useState, useEffect, useContext } from "react";
 import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
+// import Box from "@mui/material/Box";
+// import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { AppContext } from "../App";
 import "../App.css";
@@ -129,17 +129,26 @@ const PostComments = (props) => {
 
   return (
     <div>
-      <h1>All Post</h1>
-      <Box component={"form"} sx={{ m: 1 }} noValidate autoComplete={"off"}>
+      <h1>Share Something...</h1>
+      <textarea
+        placeholder="Write post..."
+        id="post-textarea"
+        rows="10"
+        cols="50"
+        onChange={(e) => setPost(e.target.value)}
+      ></textarea>
+      <br></br>
+      {/* <Box component={"form"} sx={{ m: 1 }} noValidate autoComplete={"off"}>
         <TextField
           sx={{ m: 1 }}
           id="post"
           label="Write post..."
           variant="outlined"
+          
           onChange={(e) => setPost(e.target.value)}
         />
-      </Box>
-      <Button variant="contained" onClick={handelAction}>
+      </Box> */}
+      <Button variant="contained" color="error" onClick={handelAction}>
         Add Post
       </Button>
       <div>
@@ -169,7 +178,15 @@ const PostComments = (props) => {
                         );
                       })
                     : null}
-                  <Box
+                  <textarea
+                    placeholder="Write comment..."
+                    id="comment-textarea"
+                    rows="10"
+                    cols="50"
+                    onChange={(e) => setComment(e.target.value)}
+                  ></textarea>
+                  <br></br>
+                  {/* <Box
                     component={"form"}
                     sx={{ m: 1 }}
                     noValidate
@@ -182,9 +199,10 @@ const PostComments = (props) => {
                       variant="outlined"
                       onChange={(e) => setComment(e.target.value)}
                     />
-                  </Box>
+                  </Box> */}
                   <Button
                     variant="contained"
+                    color="error"
                     onClick={() => handelComments(item.id)}
                   >
                     Add Comments
@@ -192,6 +210,7 @@ const PostComments = (props) => {
                   <div>
                     <Button
                       variant="contained"
+                      color="error"
                       onClick={() => handelSeeComments(item.id)}
                     >
                       See Comments
