@@ -158,9 +158,13 @@ const PostComments = (props) => {
                     ? getcomment.map((item, index) => {
                         return (
                           <div key={index} className="commnet-div">
-                            <p>Comment: {item.comment}</p>
-                            <p>User Id: {item.userid}</p>
-                            <p>Post Id: {item.refpostid}</p>
+                            <p className="comments">
+                              <b>User Id:</b> {item.userid}
+                              <br></br>
+                              {item.comment}
+                            </p>
+
+                            {/* <p>Post Id: {item.refpostid}</p> */}
                           </div>
                         );
                       })
@@ -185,13 +189,14 @@ const PostComments = (props) => {
                   >
                     Add Comments
                   </Button>
-
-                  <Button
-                    variant="contained"
-                    onClick={() => handelSeeComments(item.id)}
-                  >
-                    See Comments
-                  </Button>
+                  <div>
+                    <Button
+                      variant="contained"
+                      onClick={() => handelSeeComments(item.id)}
+                    >
+                      See Comments
+                    </Button>
+                  </div>
                 </div>
               );
             })
