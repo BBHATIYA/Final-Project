@@ -95,6 +95,7 @@ const PostComments = (props) => {
       const response = await axios.get(`/comments/${refpostid}`);
       const data = await response.data;
       setGtcomment(data);
+      console.log(data);
     } catch (error) {
       console.log(error);
     }
@@ -153,15 +154,17 @@ const PostComments = (props) => {
                     <br></br>
                     <b>userid:</b> {item.uid}
                   </div>
-                  {getcomment.map((item, index) => {
-                    return (
-                      <div key={index} className="commnet-div">
-                        <p>{item.comment}</p>
-                        <p>User Id: {item.userid}</p>
-                        <p>Post Id: {item.refpostid}</p>
-                      </div>
-                    );
-                  })}
+                  {getcomment.length > 0 && item.id == getcomment[0].refpostid
+                    ? getcomment.map((item, index) => {
+                        return (
+                          <div key={index} className="commnet-div">
+                            <p>Comment: {item.comment}</p>
+                            <p>User Id: {item.userid}</p>
+                            <p>Post Id: {item.refpostid}</p>
+                          </div>
+                        );
+                      })
+                    : null}
                   <Box
                     component={"form"}
                     sx={{ m: 1 }}
@@ -182,6 +185,7 @@ const PostComments = (props) => {
                   >
                     Add Comments
                   </Button>
+
                   <Button
                     variant="contained"
                     onClick={() => handelSeeComments(item.id)}
