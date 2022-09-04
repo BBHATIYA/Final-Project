@@ -27,7 +27,14 @@ function App() {
               </Auth>
             }
           />
-          <Route path="/post" element={<PostComments title={"post"} />} />
+          <Route
+            path="/post"
+            element={
+              <Auth>
+                <PostComments title={"post"} />
+              </Auth>
+            }
+          />
           <Route
             path="/login"
             element={<LoginRegisterForm title={"Login"} />}

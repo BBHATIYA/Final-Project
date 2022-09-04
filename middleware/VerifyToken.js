@@ -4,6 +4,7 @@ import Users from "../models/UsersModel.js";
 export const VerifyToken = (req, res, next) => {
   const accessToken = req.cookies.accessToken || req.headers["x-access-token"];
 
+  console.log("verToken=>", accessToken);
   if (accessToken == null) return res.sendStatus(401);
   jwt.verify(
     accessToken,
