@@ -48,6 +48,7 @@ const PostComments = (props) => {
       );
 
       console.log("post=>", response.data);
+      seePost();
     } catch (error) {
       console.log(error);
     }
@@ -101,18 +102,32 @@ const PostComments = (props) => {
     }
   };
 
-  //featching all post
+  const seePost = async () => {
+    try {
+      const response = await axios.get("post");
+      const data = await response.data;
+      setGetpost(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
-    fetch("/post")
-      .then((res) => {
-        if (res.status === 200) {
-          return res.json();
-        }
-      })
-      .then((data) => {
-        setGetpost(data);
-      });
+    seePost();
   }, []);
+
+  // //featching all post
+  // useEffect(() => {
+  //   fetch("/post")
+  //     .then((res) => {
+  //       if (res.status === 200) {
+  //         return res.json();
+  //       }
+  //     })
+  //     .then((data) => {
+  //       setGetpost(data);
+  //     });
+  // }, []);
 
   // featching all comments
   // useEffect(() => {

@@ -143,8 +143,10 @@ export const login = async (req, res) => {
 };
 
 export const logout = (req, res) => {
-  const accessToken = req.cookie.accessToken;
+  const accessToken = req.cookies.accessToken;
+  console.log("logout=>", accessToken);
   if (!accessToken) return res.sendStatus(204);
   res.clearCookie("accessToken");
+
   return res.sendStatus(200);
 };

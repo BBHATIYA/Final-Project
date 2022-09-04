@@ -28,9 +28,9 @@ router.post("/register", register);
 
 router.delete("/logout", logout);
 
-router.post("/post", allPost);
+router.post("/post", VerifyToken, allPost);
 
-router.post("/comments", allComments);
+router.post("/comments", VerifyToken, allComments);
 
 router.get("/token", VerifyToken, (req, res) => {
   res.sendStatus(200);

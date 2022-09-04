@@ -7,7 +7,9 @@ const Nav = (props) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    fetch("/logout")
+    fetch("/logout", {
+      method: "delete",
+    })
       .then((response) => {
         alert("You have been successfully logged out!");
         navigate("/login", { replace: true });
