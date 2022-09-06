@@ -18,7 +18,14 @@ function App() {
       <div className="App">
         <Nav />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={
+              <Auth>
+                <Home />
+              </Auth>
+            }
+          />
           <Route
             path="/branch"
             element={

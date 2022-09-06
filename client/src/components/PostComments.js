@@ -153,16 +153,7 @@ const PostComments = (props) => {
         onChange={(e) => setPost(e.target.value)}
       ></textarea>
       <br></br>
-      {/* <Box component={"form"} sx={{ m: 1 }} noValidate autoComplete={"off"}>
-        <TextField
-          sx={{ m: 1 }}
-          id="post"
-          label="Write post..."
-          variant="outlined"
-          
-          onChange={(e) => setPost(e.target.value)}
-        />
-      </Box> */}
+
       <Button variant="contained" color="error" onClick={handelAction}>
         Add Post
       </Button>
@@ -201,20 +192,7 @@ const PostComments = (props) => {
                     onChange={(e) => setComment(e.target.value)}
                   ></textarea>
                   <br></br>
-                  {/* <Box
-                    component={"form"}
-                    sx={{ m: 1 }}
-                    noValidate
-                    autoComplete={"off"}
-                  >
-                    <TextField
-                      sx={{ m: 1 }}
-                      id="comment"
-                      label="Write comment..."
-                      variant="outlined"
-                      onChange={(e) => setComment(e.target.value)}
-                    />
-                  </Box> */}
+
                   <Button
                     variant="contained"
                     color="error"

@@ -68,31 +68,17 @@ const LoginRegisterForm = (props) => {
       </div>
       <Box component={"form"} sx={{ m: 1 }} noValidate autoComplete={"off"}>
         <input
-          type="text"
+          type="email"
           placeholder="Enter email.."
           id="email"
           onChange={(e) => setEmail(e.target.value)}
         ></input>
         <input
-          type="text"
+          type="password"
           placeholder="Enter password.."
           id="password"
           onChange={(e) => setPassword(e.target.value)}
         ></input>
-        {/* <TextField
-          sx={{ m: 1 }}
-          id="email"
-          label="Enter email"
-          variant="outlined"
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <TextField
-          sx={{ m: 1 }}
-          id="password"
-          label="Enter password"
-          variant="outlined"
-          onChange={(e) => setPassword(e.target.value)}
-        /> */}
       </Box>
       <Button variant="contained" color="error" onClick={handelAction}>
         {props.title}
