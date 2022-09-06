@@ -87,6 +87,7 @@
   background-color: red;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .nav-logo {
@@ -176,3 +177,4 @@ body{
 .nav-btn:hover{
   transform: scale(1.2);
 }
+
