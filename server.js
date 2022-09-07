@@ -4,6 +4,7 @@ import cors from "cors";
 import db from "./config/Database.js";
 import dotenv from "dotenv";
 import router from "./routes/Users.js";
+import path from "path";
 
 dotenv.config();
 
@@ -25,3 +26,10 @@ try {
 } catch (error) {
   console.log(error);
 }
+
+const __dirname = path.resolve();
+
+app.use("/", express.static(path.join(__dirname, "client/build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
+});
